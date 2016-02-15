@@ -12,22 +12,22 @@ import sys
 def read_in_csv(csvfile):
 	with open (csvfile, 'rb') as f:
 		reader = csv.reader(f)
-		next(reader, None)
+		header = (f.next()).strip('\n').strip('\t')
 		properties = list(reader)
+		properties
 		flatlist_properties = [x for y in properties for x in y]
-	return flatlist_properties
+	return flatlist_properties, header 
 
 def append_properties_to_geojson(csvfile, geojsonfile):
 	data = json.loads(open(geojsonfile).read())
 	data = copy.deepcopy(data)
-	values_to_add = read_in_csv(csvfile)
+	values_to_add = read_in_csv(csvfile)[0]
 	try:
 		for entry in range(len(data["features"])):
-			data["features"][entry]["properties"]["value"] = values_to_add[entry]
+			data["features"][entry]["properties"][read_in_csv(csvfile)[1]] = values_to_add[entry]
 	except:
 		print "Note: Your CSV and geojson features do not contain the same number of values."
 	return data 
-
 
 if __name__ == "__main__":
 	csvfile = sys.argv[1]

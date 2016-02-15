@@ -23,5 +23,7 @@ Sample installation (do for all that are not yet installed):
 
 (If the above does not work, you may need to sudo it.)
 
-*This code was created for the ITP Spring 2016 class "[Everything is Physical: The Art of Digital Mapping](https://github.com/MimiOnuoha/art-of-digital-mapping-ITP2016)."*
+EDIT: I haven't yet had time to properly adapt this to read in more than one column. For now, if you have more data to add, just run the code multiple times on files that still contain one column of data. The file created always is called updated_data.json, so make sure the json file you're reading in does not have the same name. 
+
+*This was created for the ITP Spring 2016 class "[Everything is Physical: The Art of Digital Mapping](https://github.com/MimiOnuoha/art-of-digital-mapping-ITP2016)."*
 
