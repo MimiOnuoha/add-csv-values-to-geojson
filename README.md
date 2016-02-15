@@ -11,7 +11,7 @@ To run, clone this directory:
 
 Make sure that your geojson and CSV files are in the same directory. Run using the following, substituting your filenames in where appropriate:
 	
-	python add_csv_to_geojson.py csvfile.csv geojsonfile.json
+	python add_csv_to_geojson.py samplecsv.csv samplestates.json
 	
 NOTE: Dependencies include the json, csv, copy, and sys modules. Make sure that you have installed each of them before using this. 
 
