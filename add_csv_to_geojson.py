@@ -14,7 +14,6 @@ def read_in_csv(csvfile):
 		reader = csv.reader(f)
 		header = (f.next()).strip('\n').strip('\t')
 		properties = list(reader)
-		properties
 		flatlist_properties = [x for y in properties for x in y]
 	return flatlist_properties, header 
 
